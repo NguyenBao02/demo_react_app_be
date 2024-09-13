@@ -9,3 +9,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('/participant', [Participant::class, 'store']);
+Route::get('/participant/all', [Participant::class, 'getAll']);
+Route::get('/participant/paginate/{pageNumber}/{limitPage}', [Participant::class, 'paginate']);
+Route::post('/participant/update', [Participant::class, 'update']);
+Route::post('/participant/delete', [Participant::class, 'destroy']);
